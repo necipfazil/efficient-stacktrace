@@ -15,7 +15,7 @@
 // }
 
 void r1(int k) {
-  printf("debug: r1(%d)\n", k);
+  //printf("debug: r1(%d)\n", k);
   if (k < 1) return;
   char* m = (char*)malloc(k);
   r1(k-1);
@@ -31,7 +31,7 @@ void r1(int k) {
 
 int main() {
   int k = 5;
-  printf("debug: main (k=%d)\n", k);
+  //printf("debug: main (k=%d)\n", k);
   r1(k);
   return 0;
 }
