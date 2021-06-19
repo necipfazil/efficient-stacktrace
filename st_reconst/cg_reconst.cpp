@@ -229,7 +229,7 @@ PrintDFSResults(std::ostream &Out, std::ostream &Err,
         TotalDirCallsCorrectlyFound += CG.DirCallSiteAddrs.count(Addr); 
         TotalIndirCallsCorrectFound += CG.IndirCallSiteAddrs.count(Addr);
       }
-    } else { // !STI.FoundCorrectMatch
+    } else if(!STI.FoundCorrectMatch && PrintNonDecompST) {
       Err << FuncName;
       // TODO: symbolize the addresses as func+offset
       for (const auto& Addr : STI.ST) Err << " " << std::hex << Addr;
